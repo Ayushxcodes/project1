@@ -1,6 +1,9 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import Navbar from "@/components/base/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
+        {/* Dotted background pattern */}
+        <DotPattern className="fixed inset-0 -z-10" glow={false} />
+        <Navbar/>
         {children}
       </body>
     </html>
