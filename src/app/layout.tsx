@@ -30,8 +30,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
-        {/* Dotted background pattern */}
-        <DotPattern className="fixed inset-0 -z-10" glow={false} />
         <Navbar/>
         {children}
       </body>

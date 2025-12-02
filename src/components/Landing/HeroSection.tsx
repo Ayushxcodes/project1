@@ -1,61 +1,200 @@
-import React from 'react'
-import { HyperText } from '../ui/hyper-text'
+"use client";
 
-const HeroSection = () => {
-  return (
-    <div className="flex items-center justify-center min-h-screen py-10 px-4 md:px-8">
-      <div className="bg-white p-6 md:p-10 rounded-xl shadow-2xl w-full max-w-7xl min-h-[400px] md:min-h-[500px] flex items-center justify-center relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 right-0 w-40 h-40 md:w-64 md:h-64 bg-blue-100 rounded-full filter blur-3xl opacity-30 -mr-20 -mt-20 md:-mr-32 md:-mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-60 h-60 md:w-96 md:h-96 bg-cyan-100 rounded-full filter blur-3xl opacity-30 -ml-32 -mb-32 md:-ml-48 md:-mb-48"></div>
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl px-4 md:px-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-6">
-            <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-            Technology-Driven Healthcare Solutions
-          </div>
+// ---------------- SLIDE DATA ---------------- //
+const slides = [
+  {
+    title: (
+      <>
+        Advancing Health & Innovation with{" "}
+        <span className="text-teal-600">AI-Driven Pharma & MedTech Solutions</span>
+      </>
+    ),
+    subtitle:
+      "From molecule to monitoring — bridging research, devices and real-world impact.",
+    image: "/Doctors-bro.png",
+    footerText:
+      "Empowering healthcare teams with intelligent automation and breakthrough digital innovation.",
 
-          {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
-            Transforming Healthcare
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
-              Procurement & Supply Management
-            </span>
-          </h1>
+    // RECTANGLE SHAPE BLOCKS (Slide 1)
+    shapes: (
+      <div className="mt-10 space-y-6">
+        {/* Blue Rectangle */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-blue-100 rounded-xl p-8"
+        >
+          <h2 className="text-4xl font-bold text-blue-900">8+</h2>
+          <p className="mt-2 text-gray-700 font-medium">
+            Programs in Development
+          </p>
 
-          {/* Subheading */}
-          <div className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-10">
-            <HyperText className="text-base sm:text-lg">
-              Intelligent, cloud-based procurement software that simplifies purchasing,
-              improves transparency, and ensures compliance across the medical supply chain.
-            </HyperText>
-          </div>
+          <button className="mt-4 bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+            Explore Pipeline →
+          </button>
+        </motion.div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm md:text-base">
-              Get Started Today
-            </button>
-            <button className="px-6 py-3 md:px-8 md:py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-200 text-sm md:text-base">
-              Learn More
-            </button>
-          </div>
+        {/* Teal Rectangle */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-teal-100 rounded-xl p-8"
+        >
+          <h2 className="text-xl font-bold text-teal-800">
+            Latest Press Release
+          </h2>
+          <p className="mt-2 text-gray-700">
+            Kashiv Biosciences announces new expansion...
+          </p>
 
-          {/* Trust Badge */}
-          <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-gray-200">
-            <p className="text-xs sm:text-sm text-gray-500 mb-3">Trusted by healthcare organizations across the United States</p>
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 opacity-50">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-400">Hospital+</div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-400">ClinicCare</div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-400">MedSupply</div>
-            </div>
-          </div>
-        </div>
+          <button className="mt-4 bg-teal-700 text-white px-5 py-2 rounded-lg font-semibold hover:bg-teal-800 transition">
+            More News →
+          </button>
+        </motion.div>
       </div>
-    </div>
-  )
-}
+    ),
+  },
 
-export default HeroSection
+  // ---------------- SLIDE 2 ---------------- //
+  {
+    title: (
+      <>
+        Transforming R&D Pipelines with{" "}
+        <span className="text-blue-600">Predictive AI & Real-World Insights</span>
+      </>
+    ),
+    subtitle:
+      "Accelerating drug discovery, device engineering, and quality operations.",
+    image: "/Chat_bot.gif",
+    footerText:
+      "AI models optimized for biotech, pharmaceuticals, and clinical research.",
+
+    // RECTANGLE SHAPE BLOCKS (Slide 2)
+    shapes: (
+      <div className="mt-10 space-y-6">
+        {/* Mint Rectangle */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-teal-50 border border-teal-100 rounded-xl p-8"
+        >
+          <h2 className="text-3xl font-bold text-teal-700">AI-Powered Insights</h2>
+          <p className="mt-2 text-gray-700">
+            Real-time analytics enabling faster decision-making.
+          </p>
+        </motion.div>
+
+        {/* Blue Rectangle */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-blue-100 rounded-xl p-8"
+        >
+          <h2 className="text-xl font-bold text-blue-900">
+            Enhanced Data Security
+          </h2>
+          <p className="mt-2 text-gray-700">
+            Built for regulated healthcare environments.
+          </p>
+        </motion.div>
+      </div>
+    ),
+  },
+];
+
+export default function HeroSlider() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 6500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
+    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+
+  return (
+    <section className="relative bg-white py-20 overflow-hidden">
+
+      {/* Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
+      >
+        ←
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
+      >
+        →
+      </button>
+
+      {/* MAIN CONTENT */}
+      <div className="mx-auto max-w-7xl px-4">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-2 gap-12 items-start"
+          >
+            {/* LEFT SIDE */}
+            <div>
+              <h1 className="text-5xl font-bold leading-tight text-gray-900">
+                {slides[index].title}
+              </h1>
+
+              <p className="mt-6 text-lg text-gray-700 max-w-lg">
+                {slides[index].subtitle}
+              </p>
+
+              {/* Rectangle shape blocks */}
+              {slides[index].shapes}
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div className="flex flex-col items-center text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="relative w-[360px] h-[360px] md:w-[420px] md:h-[420px]"
+              >
+                <Image
+                  src={slides[index].image}
+                  alt="Hero Illustration"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mt-6 max-w-sm text-gray-600 text-lg"
+              >
+                {slides[index].footerText}
+              </motion.p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </section>
+  );
+}
