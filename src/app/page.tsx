@@ -1,6 +1,7 @@
 import Navbar from '@/components/base/Navbar'
 import HeroSection from '@/components/Landing/HeroSection'
-import { BentoDemo } from '@/components/Landing/HowWeWork'
+import WhyChooseUs from '@/components/Landing/HowWeWork'
+import HowWeWork from '@/components/Landing/OurProcess'
 import WhatWeDeliver from '@/components/Landing/WhatWeDeliver'
 import WhoAreWe from '@/components/Landing/WhoAreWe'
 import WhyAmericoeMedico from '@/components/Landing/WhyChooseUs'
@@ -12,8 +13,9 @@ const page = () => {
       <HeroSection />
       <WhoAreWe />
       <WhatWeDeliver />
-      <BentoDemo/>
+      <WhyChooseUs />
       <WhyAmericoeMedico />
+      <HowWeWork />
     </div>
   )
 }

@@ -125,25 +125,26 @@ export default function HeroSlider() {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
+    <section className="relative bg-white py-10 md:py-20 overflow-hidden">
 
       {/* Arrows */}
+      {/* Arrows - stack on mobile, side on desktop */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
+        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
       >
         ←
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
+        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
       >
         →
       </button>
 
       {/* MAIN CONTENT */}
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -151,29 +152,29 @@ export default function HeroSlider() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-12 items-start"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start"
           >
             {/* LEFT SIDE */}
             <div>
-              <h1 className="text-5xl font-bold leading-tight text-gray-900">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900">
                 {slides[index].title}
               </h1>
 
-              <p className="mt-6 text-lg text-gray-700 max-w-lg">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-700 max-w-lg">
                 {slides[index].subtitle}
               </p>
 
               {/* Rectangle shape blocks */}
-              {slides[index].shapes}
+              <div className="w-full">{slides[index].shapes}</div>
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center mt-8 md:mt-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="relative w-[360px] h-[360px] md:w-[420px] md:h-[420px]"
+                className="relative w-full max-w-xs h-[260px] sm:h-[320px] md:w-[420px] md:h-[420px]"
               >
                 <Image
                   src={slides[index].image}
@@ -187,7 +188,7 @@ export default function HeroSlider() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="mt-6 max-w-sm text-gray-600 text-lg"
+                className="mt-4 sm:mt-6 max-w-xs sm:max-w-sm text-gray-600 text-base sm:text-lg"
               >
                 {slides[index].footerText}
               </motion.p>

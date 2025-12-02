@@ -20,7 +20,7 @@ const Navbar = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 80, damping: 15 }}
-      className="fixed top-4 left-1/2 z-50 w-[90vw] max-w-3xl -translate-x-1/2 rounded-2xl bg-white/80 shadow-xl backdrop-blur-lg border border-neutral-200 px-6 py-3 flex items-center justify-between"
+      className="sticky top-0 left-0 w-full z-50 bg-white shadow border-b border-neutral-200 px-6 py-3 flex items-center justify-between"
     >
       <Link href="/" className="font-bold text-xl text-neutral-800 tracking-tight">
         Americo-E-Medico

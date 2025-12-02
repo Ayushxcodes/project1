@@ -1,104 +1,169 @@
-import React from "react";
-import { AnimatedList } from "@/components/ui/animated-list";
-import { Heart, Sparkles, Target, Users } from "lucide-react";
+"use client";
 
-const WhoAreWe = () => {
-  const features = [
-    {
-      icon: Sparkles,
-      title: "Boutique Advisory",
-      description:
-        "Americo e Medico is a boutique advisory & solutions provider combining deep expertise in AI, automation and healthcare / pharma.",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: Target,
-      title: "Market Specialization",
-      description:
-        "We specialise in bringing medical-tech innovations, pharma manufacturing, hospital management and supply-chain solutions to life — especially when launching or scaling in the U.S. market.",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      icon: Users,
-      title: "Full-Service Partnership",
-      description:
-        "We see ourselves as your full-service partner: from concept to launch, from compliance to operations — not merely an adviser, but a committed collaborator ensuring operational excellence and compliance.",
-      color: "from-emerald-500 to-teal-500",
-    },
-  ];
+import { motion } from "framer-motion";
+import Image from "next/image";
 
+export default function AboutUs() {
   return (
-    <section className="relative w-full py-16 md:py-24 px-4 sm:px-8 md:px-16 overflow-hidden">
-      {/* Main Wrapper */}
-      <div className="relative max-w-6xl w-full mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-5 md:mb-6 shadow-lg">
-            <Heart className="w-8 h-8 md:w-10 md:h-10 text-white" />
-          </div>
+    <section className="py-12 md:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 mb-4">
-            Who Are We?
+        {/* ---------- LEFT: Illustration + Shape Background ---------- */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative flex justify-center"
+        >
+          {/* Decorative shapes */}
+          <div className="absolute -top-10 -left-10 w-72 h-72 bg-teal-100 rounded-full opacity-40 blur-2xl"></div>
+          <div className="absolute bottom-0 -right-10 w-72 h-72 bg-blue-100 rounded-full opacity-40 blur-2xl"></div>
+
+          {/* Illustration */}
+          <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg h-[220px] sm:h-[320px] md:h-[420px]">
+            <Image
+              src="/Medicine-bro.png"  // ← Your illustration
+              alt="About Us Illustration"
+              fill
+              className="object-contain relative z-10"
+            />
+          </div>
+        </motion.div>
+
+        {/* ---------- RIGHT: ABOUT CONTENT + LOGO GRID ---------- */}
+        <div>
+
+          {/* TITLE */}
+          <h2 className="text-4xl font-bold text-gray-900 leading-tight mb-4">
+            About Us
           </h2>
 
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+          {/* ABOUT CONTENT */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-lg text-gray-700 leading-relaxed mb-4"
+          >
+            We are an integrated innovation partner at the intersection of
+            pharmaceutical science, medical devices, and artificial intelligence.
+          </motion.p>
 
-        {/* Feature Cards */}
-        <AnimatedList className="grid grid-cols-1 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
-              >
-                {/* Hover Gradient */}
-                <div
-                  className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                ></div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-lg text-gray-700 leading-relaxed mb-4"
+          >
+            Our mission is to accelerate the development of safer drugs,
+            smarter diagnostic instruments, and AI-powered healthcare technologies
+            that make meaningful impact in real-world settings.
+          </motion.p>
 
-                <div className="relative flex items-start gap-4 sm:gap-6">
-                  {/* Icon */}
-                  <div
-                    className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                  </div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-lg text-gray-700 leading-relaxed"
+          >
+            Combining deep scientific expertise with cutting-edge computational
+            tools, we provide end-to-end support — from research and design to
+            validation, regulatory alignment, and commercialization.
+          </motion.p>
 
-                  {/* Text */}
-                  <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-                      {feature.title}
-                    </h3>
+          {/* ---------- LOGOS WITH TEXT ---------- */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12">
 
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Corner Decoration */}
-                <div
-                  className={`absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${feature.color} opacity-5 rounded-bl-full`}
-                ></div>
+            {/* LOGO ITEM 1 – Innovation */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 flex items-center gap-4"
+            >
+              <div className="w-16 h-16 bg-white shadow-sm rounded-lg flex items-center justify-center">
+                {/* Flask/Discovery Icon */}
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2">
+                  <path d="M10 2v4l-5 9a5 5 0 0 0 4 7h6a5 5 0 0 0 4-7l-5-9V2" />
+                </svg>
               </div>
-            );
-          })}
-        </AnimatedList>
+              <div>
+                <h4 className="font-semibold text-gray-900">Innovation</h4>
+                <p className="text-sm text-gray-600">Breakthrough R&D and AI-driven discovery</p>
+              </div>
+            </motion.div>
 
-        {/* Bottom Caption */}
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-3 bg-white rounded-full shadow-md border border-gray-100 text-sm md:text-base">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span className="font-medium text-gray-600">
-              Your Committed Healthcare Partner
-            </span>
+            {/* LOGO ITEM 2 – MedTech Systems */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 flex items-center gap-4"
+            >
+              <div className="w-16 h-16 bg-white shadow-sm rounded-lg flex items-center justify-center">
+                {/* Device/Chip Icon */}
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" strokeWidth="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">MedTech Systems</h4>
+                <p className="text-sm text-gray-600">Smart devices & diagnostics</p>
+              </div>
+            </motion.div>
+
+            {/* LOGO ITEM 3 – AI Systems */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 flex items-center gap-4"
+            >
+              <div className="w-16 h-16 bg-white shadow-sm rounded-lg flex items-center justify-center">
+                {/* Brain/AI Icon */}
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2">
+                  <path d="M12 3a5 5 0 0 1 5 5v8a5 5 0 0 1-10 0V8a5 5 0 0 1 5-5z" />
+                  <circle cx="12" cy="12" r="1" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">AI Systems</h4>
+                <p className="text-sm text-gray-600">Predictive & assistive intelligence</p>
+              </div>
+            </motion.div>
+
+            {/* LOGO ITEM 4 – Validation */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 flex items-center gap-4"
+            >
+              <div className="w-16 h-16 bg-white shadow-sm rounded-lg flex items-center justify-center">
+                {/* Shield/Check Icon */}
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" strokeWidth="2">
+                  <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">Validation</h4>
+                <p className="text-sm text-gray-600">Compliance, QA & commercialization</p>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default WhoAreWe;
+}
