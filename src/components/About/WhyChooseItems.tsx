@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 const whyChooseItems = [
   "Integrated expertise across pharma, AI, and devices",
-  "Scientifically rigorous methods, validated approaches",
   "AI-driven innovation to reduce cost, time, and risk",
   "End-to-end support from concept to commercialization",
   "Experience working with startups and global organizations",

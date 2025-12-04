@@ -31,10 +31,8 @@ const standForItems = [
 ];
 
 const coreCompetencies = [
-  "Drug discovery & early-stage development",
   "AI-assisted diagnostics and imaging tools",
   "Smart wearables & monitoring devices",
-  "Clinical trial optimization & data intelligence",
   "Real-world evidence and post-market analytics",
   "Regulatory support, quality systems & compliance",
   "Scientific consulting for pharma & MedTech startups",
