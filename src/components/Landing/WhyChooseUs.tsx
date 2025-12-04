@@ -12,11 +12,6 @@ interface Project {
 export default function FeaturedProjects() {
   const projects: Project[] = [
     {
-      title: "AI-driven Molecule Identification for Rare Disease",
-      description: "Reduced lead time by 40%",
-      image: "/DNA-bro.png",
-    },
-    {
       title: "Smart Wearable for Cardiac Monitoring",
       description: "Enabled early detection of arrhythmia in real-world patients",
       image: "/Cardiologist-bro.png",
@@ -25,11 +20,6 @@ export default function FeaturedProjects() {
       title: "Real-World Evidence Analytics for Post-Market Safety",
       description: "Improved detection of adverse events across multiple geographies",
       image: "/Vaccine development-bro.png",
-    },
-    {
-      title: "Integrated Clinical Trial Platform",
-      description: "Optimized patient selection and data collection, reducing drop-out rate",
-      image: "/Laboratory-bro.png",
     },
   ];
 

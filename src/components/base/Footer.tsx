@@ -31,9 +31,9 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Contact</h3>
-            <p className="text-gray-600">Email: <a href="mailto:contact@example.com" className="text-teal-500">contact@example.com</a></p>
-            <p className="text-gray-600">Phone: <a href="tel:+1234567890" className="text-teal-500">+1 (234) 567-890</a></p>
-            <p className="text-gray-600">Address: 123 MedTech Ave, Pharma City</p>
+            <p className="text-gray-600">Email: <a href="mailto:contact@example.com" className="text-teal-500">nimishchandra9@gmail.com</a></p>
+            <p className="text-gray-600">Phone: <a href="tel:+1234567890" className="text-teal-500">+1(937)(367)(6512)</a></p>
+            <p className="text-gray-600">Address: Long Island, New York, USA</p>
           </motion.div>
 
           {/* Social Media */}

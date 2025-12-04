@@ -58,8 +58,7 @@ export default function AboutUs() {
             transition={{ duration: 0.7 }}
             className="text-lg text-gray-700 leading-relaxed mb-4"
           >
-            Our mission is to accelerate the development of safer drugs,
-            smarter diagnostic instruments, and AI-powered healthcare technologies
+            Our mission is to accelerate the integration of AI powered Healthcare Technology and Smart Diagnostic Instruments and AI-powered healthcare technologies
             that make meaningful impact in real-world settings.
           </motion.p>
 

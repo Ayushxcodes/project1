@@ -30,12 +30,6 @@ export default function HowWeWorkTimelineWithImages() {
       image: "/Laboratory-bro.png",
     },
     {
-      title: "Testing & Validation",
-      description:
-        "Preclinical tests, device calibration, regulatory documentation, pilot studies.",
-      image: "/Vaccine development-bro.png",
-    },
-    {
       title: "Deployment & Monitoring",
       description:
         "Post-market surveillance, feedback loops, continuous improvement.",

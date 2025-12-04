@@ -21,34 +21,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
 
           {/* SERVICE 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
-          >
-            <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-              {/* Molecule Icon */}
-              <svg width="30" height="30" fill="none" stroke="#0ea5e9" strokeWidth="2">
-                <circle cx="12" cy="12" r="3" />
-                <circle cx="4" cy="6" r="2" />
-                <circle cx="20" cy="6" r="2" />
-                <circle cx="4" cy="18" r="2" />
-                <circle cx="20" cy="18" r="2" />
-                <path d="M12 9V6M12 15v3M9 12H6M15 12h3M6 6l4 4M18 6l-4 4M6 18l4-4M18 18l-4-4"/>
-              </svg>
-            </div>
-
-            <h3 className="text-xl font-semibold text-gray-900">
-              Drug Discovery & Development Optimization
-            </h3>
-            <p className="mt-3 text-gray-700 leading-relaxed">
-              We leverage advanced AI models to identify promising drug candidates, 
-              predict molecular interactions, and streamline preclinical research — 
-              reducing time and cost while improving success rates.
-            </p>
-          </motion.div>
+          
 
           {/* SERVICE 2 */}
           <motion.div
@@ -77,31 +50,7 @@ export default function ServicesSection() {
           </motion.div>
 
           {/* SERVICE 3 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
-          >
-            <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-              {/* Database + Graph Icon */}
-              <svg width="30" height="30" fill="none" stroke="#0ea5e9" strokeWidth="2">
-                <ellipse cx="12" cy="6" rx="7" ry="3" />
-                <path d="M5 6v6c0 1.7 3 3 7 3s7-1.3 7-3V6" />
-                <path d="M7 14l3 3 5-4" />
-              </svg>
-            </div>
-
-            <h3 className="text-xl font-semibold text-gray-900">
-              Clinical Trial Support & Real-World Data Analytics
-            </h3>
-            <p className="mt-3 text-gray-700 leading-relaxed">
-              We optimize clinical trial design, patient recruitment, data pipelines, 
-              monitoring, and real-world evidence generation with advanced analytics 
-              and automation.
-            </p>
-          </motion.div>
+          
 
           {/* SERVICE 4 */}
           <motion.div
@@ -124,8 +73,7 @@ export default function ServicesSection() {
             </h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
               We provide AI-assisted pharmacovigilance, safety monitoring, quality 
-              control and compliance support to ensure continuous product quality 
-              after launch.
+              control and compliance support to ensure continuous product quality.
             </p>
           </motion.div>
 

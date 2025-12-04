@@ -9,8 +9,8 @@ const slides = [
   {
     title: (
       <>
-        Advancing Health & Innovation with{" "}
-        <span className="text-teal-600">AI-Driven Pharma & MedTech Solutions</span>
+        Advancing Healthcare & Innovation with{" "}
+        <span className="text-teal-600">AI–Driven Pharmaceutical and Medical Technology Solutions</span>
       </>
     ),
     subtitle:
